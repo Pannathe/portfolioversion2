@@ -7,7 +7,11 @@ const INSET = 20;
 
 function track() {
   const max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
-  const travel = Math.max(window.innerHeight - SIZE - INSET * 2, 0);
+  const normalTravel = Math.max(window.innerHeight - SIZE - INSET * 2, 0);
+  const disclaimer = document.querySelector<HTMLElement>(".site-disclaimer");
+  const disclaimerTop = disclaimer?.getBoundingClientRect().top ?? window.innerHeight;
+  const footerTravel = Math.max(disclaimerTop - INSET - SIZE - INSET, 0);
+  const travel = disclaimer ? Math.min(normalTravel, footerTravel) : normalTravel;
   return { max, travel };
 }
 

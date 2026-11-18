@@ -46,29 +46,38 @@ export default function HomePage() {
   });
 
   return (
-    <main>
-      <section className="flash-screen">
-        <FlashSquare images={flashImages} />
-      </section>
-      <div className="field">
-        {sequence.map((item) =>
-          item.kind === "picture" ? (
-            <Link
-              className={`drift ${item.place}`}
-              href={`/projects/${item.slug}`}
-              aria-label={item.title}
-              key={item.slug}
-            >
-              <img src={item.image?.src} alt={item.image?.alt ?? item.title} loading="eager" decoding="async" />
-            </Link>
-          ) : (
-            <section className={`note ${item.place}`} key={item.id}>
-              <p className="script">{item.script}</p>
-              <p>{item.body}</p>
-            </section>
-          ),
-        )}
-      </div>
-    </main>
+    <>
+      <main>
+        <section className="flash-screen">
+          <FlashSquare images={flashImages} />
+        </section>
+        <div className="field">
+          {sequence.map((item) =>
+            item.kind === "picture" ? (
+              <Link
+                className={`drift ${item.place}`}
+                href={`/projects/${item.slug}`}
+                aria-label={item.title}
+                key={item.slug}
+              >
+                <img src={item.image?.src} alt={item.image?.alt ?? item.title} loading="eager" decoding="async" />
+              </Link>
+            ) : (
+              <section className={`note ${item.place}`} key={item.id}>
+                <p className="script">{item.script}</p>
+                <p>{item.body}</p>
+              </section>
+            ),
+          )}
+        </div>
+      </main>
+      <footer className="site-disclaimer">
+        <p>© 2026 Panna Drenko. All rights reserved.</p>
+        <p>
+          Images, artworks, photographs and designs may be shared with clear credit to the author and a link to the original source.
+          Reproduction, modification or other use without prior written permission is not permitted.
+        </p>
+      </footer>
+    </>
   );
 }

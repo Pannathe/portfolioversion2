@@ -122,6 +122,25 @@ img {
   font-weight: 700;
 }
 
+.site-disclaimer {
+  position: relative;
+  z-index: 10;
+  width: calc(100% - 56px);
+  margin: 0 28px;
+  padding: 24px 0 32px;
+  background: var(--paper);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.site-disclaimer p {
+  margin: 0;
+}
+
+.site-disclaimer p + p {
+  margin-top: 8px;
+}
+
 body:has(.contact-stage) .instagram-link {
   display: none;
 }
