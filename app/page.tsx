@@ -5,24 +5,24 @@ import { coverImage, featured, flashImages, newestFirst } from "@/lib/content";
 const notes = [
   {
     kind: "note" as const,
-    id: "attention",
-    script: "attention",
+    id: "direction",
+    script: "01 Direction",
     place: "note-left",
-    body: "Design is a decision about how something should exist. It is attention made visible: the edge of a page, the weight of an object, the pause between two pictures.",
+    body: "I’m Panna Drenkó, a graphic designer and art director shaping visual identities, publications, and digital campaigns for fashion labels, cultural spaces, and independent publishers.",
   },
   {
     kind: "note" as const,
-    id: "matter",
-    script: "why it matters",
+    id: "process",
+    script: "02 Process",
     place: "note-right",
-    body: "People live inside design. A room, a poster, a tool — each one teaches how to move, what to notice, and what can be left alone. Care in those choices is a form of respect.",
+    body: "My practice translates ideas into brands, printed matter, and graphic languages through a research-based approach, creating work that draws attention and tells a personal story across physical and digital screens.",
   },
   {
     kind: "note" as const,
-    id: "hold",
-    script: "a quiet hold",
+    id: "identity",
+    script: "03 Identity",
     place: "note-center",
-    body: "Good design does not need to shout. It holds a feeling long enough for someone else to recognize it, and then it gets out of the way.",
+    body: "Informed by an ongoing practice in video art, image-making, and installations, where visual research is translated into cohesive, intentional design solutions.",
   },
 ];
 

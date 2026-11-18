@@ -21,7 +21,17 @@ function wait(ms: number) {
 
 export function FlashSquare({ images }: { images: string[] }) {
   const [current, setCurrent] = useState(images[0] ?? "");
+  const [docked, setDocked] = useState(false);
   const sequence = images.join("|");
+
+  useEffect(() => {
+    const onScroll = () => {
+      setDocked(window.scrollY > window.innerHeight * 0.28);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const list = sequence ? sequence.split("|") : [];
@@ -57,7 +67,7 @@ export function FlashSquare({ images }: { images: string[] }) {
   if (!images.length) return null;
 
   return (
-    <div className="flash-square" aria-hidden="true">
+    <div className={docked ? "flash-square is-docked" : "flash-square"} aria-hidden="true">
       <img src={current} alt="" />
     </div>
   );
