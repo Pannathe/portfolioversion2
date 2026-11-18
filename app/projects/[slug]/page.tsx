@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectTitle } from "@/components/ProjectTitle";
 import { getWork, works, type Picture } from "@/lib/content";
+import { createDescriptionExcerpt, createPageMetadata } from "@/lib/seo";
 
 function Media({ item, className, loading }: { item: Picture; className?: string; loading?: "eager" | "lazy" }) {
   if (item.type === "video") {
@@ -20,7 +21,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const work = getWork(slug);
-  return { title: work ? work.title : "Project" };
+  return createPageMetadata({
+    title: work ? work.title : "Project",
+    description: work
+      ? createDescriptionExcerpt(work.description)
+      : "Explore selected graphic design projects by Panna Drenkó.",
+    path: `/projects/${slug}/`,
+  });
 }
 
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {

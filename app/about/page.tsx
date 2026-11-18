@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = createPageMetadata({
+  title: "About",
+  description:
+    "Panna Drenkó is a graphic designer working across visual identities, editorial design, art direction, publications, moving image, and digital design.",
+  path: "/about/",
+});
 
 const facts = [
   { title: "Education", items: site.education },

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact Panna Drenkó about selected graphic design commissions, creative direction, and collaborations across culture, fashion, and publishing. Based in Budapest and The Hague.",
+  path: "/contact/",
+});
 
 export default function ContactPage() {
   return (

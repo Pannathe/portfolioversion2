@@ -21,7 +21,7 @@ export const works: Work[] = [
     title: "Folklore Riso",
     script: "",
     section: "project",
-    groups: [],
+    groups: ["artworks"],
     year: "2024",
     description:
       "A risograph print series inspired by fairy tales viewed through a psychological lens. Drawing from Red Riding Hood, A királykisasszony jegyei (The Marks of the Princess), and the ideas in Women Who Run With the Wolves.\n\nCreated in collaboration with Eszter Józsa, the images were developed as a series of domestic photographs.",
@@ -125,7 +125,7 @@ export const works: Work[] = [
     title: "The Instinctive Being",
     script: "Publication, creative writing",
     section: "project",
-    groups: [],
+    groups: ["editorial"],
     year: "2026",
     description:
       "The Instinctive Being translates the spatial conditions of Inner Labyrinth into an editorial form, acting as an entry point to the idea of getting lost.\n\nA short fictional narrative follows an “Instinctive Being” moving through an internal labyrinth. Familiar pathways are repeated until physical needs interrupt the pattern and memory creates new paths to explore.\n\nThe page numbering extends the visual language of the installation, becoming an unconventional navigation system. Gradually breaking away from its usual function, it interacts with the typography and becomes part of the composition, making orientation increasingly difficult as the reader moves through the pages.",

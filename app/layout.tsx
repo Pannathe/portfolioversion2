@@ -8,14 +8,14 @@ import "./globals.css";
 
 const mono = IBM_Plex_Mono({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-mono",
 });
 
 const grotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-grotesk",
 });
 
@@ -26,15 +26,22 @@ const serif = Instrument_Serif({
   variable: "--font-serif",
 });
 
-const description = `${site.name} portfolio`;
+const title = `${site.name} Design Portfolio`;
+const description =
+  "Graphic designer and art director Panna Drenkó creates visual identities, publications, and digital campaigns for fashion labels, cultural spaces, and independent publishers.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pannadrenko.com"),
   title: {
-    default: site.name,
-    template: `%s — ${site.name}`,
+    default: title,
+    template: `%s | ${site.name}`,
   },
   description,
+  alternates: { canonical: "/" },
+  authors: [{ name: "Panna Drenkó", url: "https://pannadrenko.com/about/" }],
+  creator: "Panna Drenkó",
+  publisher: site.name,
+  robots: { index: true, follow: true },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -44,16 +51,16 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
-    title: site.name,
+    title,
     description,
-    url: "https://pannadrenko.com/",
-    siteName: site.name,
+    url: "/",
+    siteName: title,
     type: "website",
     images: [{ url: "/share.png", width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
+    title,
     description,
     images: ["/share.png"],
   },
